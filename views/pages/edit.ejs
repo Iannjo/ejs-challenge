@@ -1,0 +1,22 @@
+<%- include("../partials/header.ejs")%>
+<h1>Edit</h1>
+<form class="" action="/edit" method="post">
+
+  <div class="row">
+      <div class="col-md-12">
+  <div class="form-group">
+    <label for="exampleFormControlInput1">Title</label>
+   <input readonly type="text" class="form-control" id="exampleFormControlInput1"name = "postTitle" value="<%=title%>">
+    <label for="exampleFormControlTextarea1">Post</label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" name="postBody" rows="3" ><%=body%></textarea>
+    
+  </div>
+  </div>
+  </div>
+
+
+  <button type="submit" class="btn btn-primary btn-lg">Save</button>
+
+</form>
+
+<%- include("../partials/footer.ejs") -%>

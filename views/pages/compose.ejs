@@ -1,0 +1,28 @@
+<%- include("../partials/header") -%>
+<h1>Compose</h1>
+<% if (locals.msg) { %>
+  <p class="lead error">><%= msg %></p>
+  <% } else { %>
+  <h4>Enter your name below 👇</h4>
+  <% } %>
+<form class="" action="/compose" method="post">
+
+  <div class="row">
+      <div class="col-md-12">
+  <div class="form-group">
+    <label for="exampleFormControlInput1">Title</label>
+   <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Title"name = "postTitle" required value="<%=locals.title%>">
+    <label for="exampleFormControlTextarea1">Post</label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" name="postBody"placeholder="Text" rows="3"><%=locals.body%></textarea>
+
+  </div>
+  </div>
+  </div>
+
+
+  <button type="submit" class="btn btn-primary btn-lg">Publish</button>
+
+</form>
+<h2 class="notification">whar</h2>
+
+<%- include("../partials/footer.ejs") -%>
