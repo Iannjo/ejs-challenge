@@ -81,15 +81,6 @@ app.get("/about", function(req, res) {
 app.get("/", function(req, res) {
   res.render('pages/home', {startingContent:homeStartingContent,
     articles: articles});
-    // const articleNumber = articles.length;
-    
-    // const articleTitle = articles[0].title
-    // if (articleNumber > 1){
-    //   console.dir(`Ẁhat is the length ${articles.length},${articles[0].title}`)
-    //   console.dir(articleTitle)
-
-    // }
-    console.log(articles)
     
 });
 
@@ -111,24 +102,16 @@ app.post("/contact", function(req, res){
 //Dynamically making a url
 app.get("/posts/:postName",function(req,res){
   console.dir(`the article name ${req.params.postName}`)
-  const requestedTitle = (req.params.postName).toLowerCase();
-  console.log(`requestedTitle ${requestedTitle}`)
+  //const requestedTitle = (req.params.postName).toLowerCase();
+  //console.log(`requestedTitle ${requestedTitle}`)
 
-  articles.forEach(function(article){
-    console.log(article.title)
-    const storedTitle = _.lowerCase(article.title);
-    console.log(`storedTitle ${storedTitle}, requestedTitle ${requestedTitle}`)
-    //const lowStored = _.lowerCase
-    //const lowStored = _.lowerCase
-    if(storedTitle === requestedTitle){
-      console.dir("Match found");
-      res.render('pages/post',{title:article.title,body:article.content})
-    } else {
-      console.dir("no here cigar")
+  //Use the array find method
+  articles.find((x)=>{
+    if(_.lowerCase(x.title) === req.params.postName.toLowerCase()){
       
+      res.render('pages/post',{title:x.title,body:x.content})
     }
-  });
-
+  })
 });
 
 app.get("/edit/:postName",function(req,res){
