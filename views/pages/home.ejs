@@ -6,7 +6,7 @@
 
     <div class="col-lg-8 col-lg-offset-2">
       <H1>Home</H1>
-      <p class="item"><%= startingContent%></p>
+      <p class="item"><%- startingContent%></p>
       <% articles.forEach(function(article){%>
         <% var title = article.title%>;
         <% var link = '/posts/' + title %>;
@@ -14,9 +14,9 @@
         <% var link3 = '/delete/' + title %>
         <div class=>
         <H2><a href="<%=link%>"><%= title %></a></H2>
-        <p class="item"><%=article.content.substring(0,200) + ' ...'%><a href="<%=link%>">Read more</a></p>
+        <p class="item"><%- article.content.substring(0,200) + ' ...'%><a href="<%=link%>">Read more</a></p>
         <p><a href="<%=link2%>">Edit</a></p>
-        <p class="link"><a href="<%=link3%>">Delete</p>
+        <p class="link2"><a href="<%=link3%>">Delete</p>
       </div>
       <hr />
       <%})%>

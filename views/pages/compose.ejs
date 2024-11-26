@@ -1,5 +1,11 @@
 <%- include("../partials/header") -%>
-<h1>Compose</h1>
+<div class="container-fluid">
+  <div id="content-wrap">
+  <div class="row">
+
+    <div class="col-lg-8 col-lg-offset-2">
+      <H1>Home</H1>
+      <h1>Compose</h1>
 <% if (locals.msg) { %>
   <p class="lead error">><%= msg %></p>
   <% } else { %>
@@ -16,11 +22,18 @@
     <textarea class="form-control" id="exampleFormControlTextarea1" name="postBody"placeholder="Text" rows="3"><%=locals.body%></textarea>
 
   </div>
-  </div>
-  </div>
-
-
   <button type="submit" class="btn btn-primary btn-lg">Publish</button>
+      
+    </div>
+  </div>
+</div>
+</div>
+
+  </div>
+  </div>
+
+
+  
 
 </form>
 <h2 class="notification">whar</h2>
