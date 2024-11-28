@@ -1,0 +1,59 @@
+//Initailize array of objects.
+let myArray = [
+  {id: 0, name: "Jhon"},
+  {id: 1, name: "Sara"},
+  {id: 2, name: "Domnic"},
+  {id: 3, name: "Bravo"}
+],
+    
+//Find index of specific object using findIndex method.    
+objIndex = myArray.findIndex((obj => obj.id == 1));
+
+//Log object to Console.
+console.log("Before update: ", myArray[objIndex])
+
+//Update object's name property.
+myArray[objIndex].name = "Laila"
+
+//Log object to console again.
+console.log("After update: ", myArray[objIndex])
+
+
+
+/ let post = {'title':req.body.postTitle,'content':req.body.postBody};
+  // const myArray = [];
+  // const uniqueObjects = new Set();
+  
+  // const objectToAdd = {
+  // Title: req.body.postTitle,
+  // Content: req.body.postBody,
+  // };
+
+  // console.dir(uniqueObjects + 'All the articles')
+  // console.log(objectToAdd.Title + 'The article to add')
+ 
+
+  // if (uniqueObjects.has(objectToAdd.Title)) {
+  //   console.log(`Object with title ${objectToAdd.Title} already exists`);
+  // } else {
+  //   console.log(`the mani obj ${objectToAdd}`)
+  //   uniqueObjects.add(objectToAdd);
+  //   posts.push(objectToAdd);
+    
+  // }
+  // console.log(posts.title)
+  // console.log(uniqueObjects.size)
+
+  // console.log(posts); // Output: [{"The Start":"All in the.."}]
+
+
+  // posts.push(post);
+
+  // console.log(post.title);
+
+  // Sample array to store articles
+// let articlesArray = [];
+
+
+Add error msg on the compose page it posts with same title
+exists.

@@ -13,10 +13,10 @@
         <% var link2 = '/edit/' + title %>
         <% var link3 = '/delete/' + title %>
         <div class=>
-        <H2><a href="<%=link%>"><%= title %></a></H2>
-        <p class="item"><%- article.content.substring(0,200) + ' ...'%><a href="<%=link%>">Read more</a></p>
-        <p><a href="<%=link2%>">Edit</a></p>
-        <p class="link2"><a href="<%=link3%>">Delete</p>
+        <H2><a href="<%=link.toLowerCase()%>"><%= title %></a></H2>
+        <p class="item"><%- article.content.substring(0,200) + ' ...'%><a href="<%=link.toLowerCase()%>">Read more</a></p>
+        <p><a href="<%=link2.toLowerCase()%>">Edit</a></p>
+        <p class="link2"><a href="<%=link3.toLowerCase()%>">Delete</p>
       </div>
       <hr />
       <%})%>
