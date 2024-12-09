@@ -34,6 +34,8 @@
   
 
 </form>
-<h2 class="notification">whar</h2>
+<% if (locals.msg) { %>
+<h2 class="notification"><%= msg %></h2>
+<% } %>
 
 <%- include("../partials/footer.ejs") -%>
