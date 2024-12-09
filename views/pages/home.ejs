@@ -11,7 +11,7 @@
       <!-- Generate the posts from array passed in. -->
       
       <% articles.forEach(function(article){%>
-        <% var title = article.title%>;
+        <% var title= article.title%>; //.trim().split(/s+\).join("-")
         <% var link = '/posts/' + title %>;
         <% var link2 = '/edit/' + title %>
         <% var link3 = '/delete/' + title %>

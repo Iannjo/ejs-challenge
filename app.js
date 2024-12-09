@@ -44,7 +44,7 @@ function isTitleUnique(title) {
   if (isTitleUnique(title)) {
     // Check if the article already exists for editing
     const existingArticle = articles.find(article => article.title === title);
-    console.log(existingArticle);
+    // console.log(existingArticle);
 
     if (existingArticle) {
       // Edit existing article
@@ -56,12 +56,12 @@ function isTitleUnique(title) {
       articles.push(newArticle);
       console.dir(newArticle)
       
-      console.log(`Article "${title}${content}" saved successfully.`);
+      // console.log(`Article "${title}${content}" saved successfully.`);
       res.redirect("/")
     }
   } else {
 
-    console.error(`Article with title "${title}" already exists. Please choose a unique title.`);
+    // console.error(`Article with title "${title}" already exists. Please choose a unique title.`);
     const userNote = `Article with title "${title}" already exists. Please choose a unique title.`;
     
     res.render('pages/compose',{title:title,body:content, msg:userNote})
@@ -102,13 +102,15 @@ app.post("/contact", function(req, res){
 
 //Dynamically making a url
 app.get("/posts/:postName",function(req,res){
-  // console.dir(`the article name ${req.params.postName}`)
+   console.dir(`the article name ${req.params.postName}`)
   //const requestedTitle = (req.params.postName).toLowerCase();
   //console.log(`requestedTitle ${requestedTitle}`)
+  console.log(articles)
 
   //Use the array find method
   articles.find((x)=>{
-    if(_.lowerCase(x.title) === req.params.postName.toLowerCase()){
+    console.log("the title of the post: " + x.title)
+    if(_.lowerCase(x.title) === req.params.postName){
       
       res.render('pages/post',{title:x.title,body:x.content})
     }
@@ -132,6 +134,7 @@ app.get("/edit/:postName",function(req,res){
 app.get("/delete/:postName",function(req,res){
   
   const requestedTitle = req.params.postName;
+  console.log(requestedTitle)
   
   
   //Find the index of the article
